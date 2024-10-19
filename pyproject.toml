@@ -8,9 +8,6 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 python-fasthtml = "^0.6.13"
-diffusers = {extras = ["torch"], version = "^0.30.3"}
-transformers = "^4.45.2"
-fastapi = {extras = ["standard"], version = "^0.115.2"}
 ipykernel = "^6.29.5"
 
 
