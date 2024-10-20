@@ -32,7 +32,10 @@ def navbar():
                         ),
                     ),
                     Li(
-                        A("Text To Image")
+                        A(
+                            "Chat App",
+                            
+                        )
                     ),
                     tabindex="0",
                     cls="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
