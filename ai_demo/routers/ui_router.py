@@ -5,10 +5,12 @@ from ai_demo.backend.storage_management import *
 
 @app.get('/image-generation-page')
 def img_gen_page():
+    print("Rendering the Main Page for Image Generation(Text-2-Image)!")
     return main_page()
 
 @app.post('/img_gen_form_submit')
-def test(promptInput:str, width: str, height: str):
+def imagegen_api_call(promptInput:str, width: str, height: str):
+    print(f'Form has been submitted, HF model will soon be called!')
     print(f"promptInput: {promptInput}\nwidth: {width}\nheight: {height}")
 
     if not width.isnumeric():

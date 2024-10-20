@@ -10,10 +10,13 @@ key = os.environ.get("SUPABASE_KEY")
 
 supabase = create_client(url, key)
 
-def upload_supabse(filepath = 'local_save.png'):
+def upload_supabse(filepath = '/tmp/local_save.png'):
+    print("Uploading to Supabase public bucket...")
     f_name = f"file-{uuid.uuid4().hex[-4:]}"
     response = supabase.storage.from_('test-bucket').upload(f_name, filepath)
+    print(f'Image successfully uploaded!')
     res = supabase.storage.from_('test-bucket').get_public_url(f_name)
+    print('Public URL fetched!')
     return res
 
 # if __name__ == '__main__':

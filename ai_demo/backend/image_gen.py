@@ -1,6 +1,7 @@
 import requests
 import os
 import io
+import time
 from PIL import Image
 from dotenv import load_dotenv
 
@@ -10,7 +11,7 @@ API_URL = os.getenv('FLUX_HF_ENDPOINT', default=None)
 HF_TOKEN = os.getenv('HF_TOKEN', default=False)
 
 def generate_image(payload):
-    print(f'Inside Generate Image!')
+    print(f'HF API call....')
     headers={
         "Authorization": f"Bearer {HF_TOKEN}"
     }
@@ -20,7 +21,7 @@ def generate_image(payload):
         headers=headers,
         json=payload
     )
-
-    print(response)
+    
+    print(f'HF API response: {response}')
 
     return Image.open(io.BytesIO(response.content))
